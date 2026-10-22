@@ -4,7 +4,7 @@ import { useApp } from '../store.jsx'
 
 export default function Onboarding({ onDone, editing }) {
   const { state, saveProfile } = useApp()
-  const [f, setF] = useState(state.profile || { gender: 'male', age: 25, height: 170, weight: 70, activity: 'moderate', goal: 'cutting', pace: 'ringan' })
+  const [f, setF] = useState(state.profile || { name: '', gender: 'male', age: 25, height: 170, weight: 70, activity: 'moderate', goal: 'cutting', pace: 'ringan' })
   const set = (k, v) => setF(x => {
     const n = { ...x, [k]: v }
     if (k === 'goal') n.pace = PACE[v][0].id
@@ -16,8 +16,19 @@ export default function Onboarding({ onDone, editing }) {
 
   return (
     <div className="app" style={{ paddingBottom: 40 }}>
-      <h1>{editing ? 'Ubah data' : 'Selamat datang'}</h1>
-      <p className="sub">Hitung kebutuhan kalori harianmu dulu sebelum mulai latihan.</p>
+      <h1>{editing ? 'Ubah Profil' : 'Selamat Datang'}</h1>
+      <p className="sub">{editing ? 'Perbarui nama dan parameter kalori harianmu.' : 'Isi data dirimu dulu sebelum mulai latihan.'}</p>
+
+      <div className="field">
+        <label>Nama panggilan</label>
+        <input
+          className="input"
+          type="text"
+          placeholder="Misal: Joko, Budi, Sarah"
+          value={f.name || ''}
+          onChange={e => set('name', e.target.value)}
+        />
+      </div>
 
       <div className="field"><label>Jenis kelamin</label>
         <div className="seg">

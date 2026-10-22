@@ -14,7 +14,10 @@ const P = {
   right: <path d="M9 5l7 7-7 7" />,
   down: <path d="M5 9l7 7 7-7" />,
   up: <path d="M5 15l7-7 7 7" />,
-  plus: <path d="M12 5v14M5 12h14" />
+  plus: <path d="M12 5v14M5 12h14" />,
+  lock: <><rect x="5" y="11" width="14" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></>,
+  shield: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />,
+  user: <><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>
 }
 
 export default function Icon({ name, size = 22, stroke = 2 }) {

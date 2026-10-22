@@ -36,22 +36,25 @@ export default function Home({ date, setDate, go, editProfile }) {
   return (
     <>
       <div className="head">
-        <div><h1>JadiLebihFit</h1><p className="sub">{longDate(date)}</p></div>
-        <button className="iconbtn" onClick={() => setMenu(!menu)}><Icon name="settings" size={20} /></button>
+        <div>
+          <h1>{p?.name ? `Halo, ${p.name}!` : 'JadiLebihFit'}</h1>
+          <p className="sub">{longDate(date)}</p>
+        </div>
+        <button className="iconbtn" onClick={() => setMenu(!menu)} aria-label="Pengaturan"><Icon name="settings" size={20} /></button>
       </div>
       {menu && (
         <div className="card">
           <div className="row" style={{ marginBottom: 10 }}>
-            <span style={{ fontSize: 18 }}>🔒</span>
+            <div className="ico" style={{ background: '#14291e', color: 'var(--green)' }}><Icon name="lock" size={18} /></div>
             <div>
               <b className="green" style={{ fontSize: 14 }}>Penyimpanan Lokal HP Aktif (Permanen)</b>
               <div className="mut small" style={{ lineHeight: 1.4, marginTop: 2 }}>
-                Data latihan, profil, dan kalori tersimpan permanen di memori HP Anda. Data tidak akan hilang saat web ditutup kecuali Anda menekan tombol Reset di bawah.
+                Data nama, latihan, profil, dan kalori tersimpan permanen di memori HP Anda. Data tidak akan hilang saat web ditutup kecuali Anda menekan tombol Reset di bawah.
               </div>
             </div>
           </div>
           <div className="gap" />
-          <button className="btn sec" onClick={() => { setMenu(false); editProfile() }}>Ubah data profil & hitung kalori</button>
+          <button className="btn sec" onClick={() => { setMenu(false); editProfile() }}>Ubah nama, profil & target kalori</button>
           <div className="gap" />
           <button className="btn sec" onClick={() => exportData()}>Cadangkan data (Download file JSON)</button>
           <div className="gap" />
