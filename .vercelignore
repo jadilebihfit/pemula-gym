@@ -1,0 +1,11 @@
+node_modules
+dist
+opengym-src
+tkpi-src
+src
+scripts
+public
+app.html
+start.bat
+vite.config.js
+package-lock.json
