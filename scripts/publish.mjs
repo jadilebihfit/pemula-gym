@@ -3,8 +3,9 @@
 import fs from 'node:fs'
 
 fs.copyFileSync('dist/app.html', 'index.html')
-for (const dir of ['assets', 'media']) {
+fs.copyFileSync('dist/favicon.ico', 'favicon.ico')
+for (const dir of ['assets', 'media', 'icons']) {
   fs.rmSync(dir, { recursive: true, force: true })
   fs.cpSync(`dist/${dir}`, dir, { recursive: true })
 }
-console.log('index.html, assets/, media/ diperbarui di root')
+console.log('index.html, favicon.ico, assets/, media/, icons/ diperbarui di root')
