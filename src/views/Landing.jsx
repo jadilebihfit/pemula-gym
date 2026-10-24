@@ -1,12 +1,14 @@
 import Icon from '../icons.jsx'
 
-const APK = './media/panduan-gym-jadilebihfit.apk'
+// Nama file APK dipertahankan persis seperti aslinya.
+const APK_NAME = 'panduan gym @jadilebihfit.apk'
+const APK = './' + encodeURIComponent(APK_NAME)
 
 // Unduh APK tanpa mengubah alamat di address bar.
 const downloadApk = () => {
   const a = document.createElement('a')
   a.href = APK
-  a.download = 'panduan-gym-jadilebihfit.apk'
+  a.download = APK_NAME
   document.body.appendChild(a)
   a.click()
   a.remove()
@@ -38,7 +40,7 @@ export default function Landing({ onStart }) {
         <button className="btn sec lp-btn" onClick={downloadApk}>
           <Icon name="android" size={20} /> Unduh Aplikasi Android
         </button>
-        <div className="mut small" style={{ textAlign: 'center' }}>File APK ±700 KB · Gratis</div>
+        <div className="mut small" style={{ textAlign: 'center' }}>File APK ±760 KB · Gratis</div>
       </div>
 
       <div className="lp-fitur">
