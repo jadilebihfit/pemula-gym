@@ -103,3 +103,12 @@ ol.steps { padding-left: 20px; margin: 8px 0; color: #d1d1d6; line-height: 1.5; 
 .chart .cols i { width: 9px; border-radius: 4px 4px 0 0; background: var(--orange); min-height: 2px; } .chart .cols i.g { background: var(--green); }
 .note { font-size: 12px; color: var(--mut); line-height: 1.5; }
 .chip { display: inline-flex; align-items: center; gap: 4px; }
+
+/* ---------- landing page ---------- */
+.lp { padding-bottom: 40px; }
+.lp-hero { padding: 36px 0 8px; }
+.lp-hero h1 { font-size: 38px; line-height: 1.1; margin: 14px 0 12px; }
+.lp-hero .sub { font-size: 16px; line-height: 1.5; }
+.lp-badge { display: inline-flex; align-items: center; gap: 6px; background: #17301f; color: var(--green); font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 99px; }
+.lp-cta { display: grid; gap: 10px; margin: 8px 0 28px; }
+.lp-btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 18px; }

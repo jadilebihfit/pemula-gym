@@ -8,13 +8,17 @@ import Plan from './views/Plan.jsx'
 import Workout from './views/Workout.jsx'
 import Food from './views/Food.jsx'
 import Log from './views/Log.jsx'
+import Landing from './views/Landing.jsx'
 
 function Shell() {
   const { state, data, error, startWorkout } = useApp()
   const [tab, setTab] = useState('home')
   const [date, setDate] = useState(ymd())
   const [editing, setEditing] = useState(false)
+  // Landing page hanya untuk pengunjung baru (belum punya profil).
+  const [started, setStarted] = useState(false)
 
+  if (!state.profile && !started) return <Landing onStart={() => { setStarted(true); window.scrollTo(0, 0) }} />
   if (!state.profile || editing) return <Onboarding editing={!!state.profile} onDone={() => setEditing(false)} />
   if (error) return <div className="app">Gagal memuat data: {error}</div>
   if (!data) return <div className="app mut">Memuat…</div>
